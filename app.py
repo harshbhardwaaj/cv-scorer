@@ -3,6 +3,10 @@ import json
 from parser import extract_text
 from scorer import score_cv
 
+password = st.text_input("Enter password to access the app", type="password")
+if password != st.secrets["APP_PASSWORD"]:
+    st.stop()
+
 st.title("CV-JD Fit Scorer")
 st.caption("Upload a CV and paste a job description to get an instant fit analysis.")
 
